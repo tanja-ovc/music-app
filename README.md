@@ -39,8 +39,6 @@ Python 3.10, Django 4.2, DRF 3.14, Docker Compose, PostgreSQL 13.0, Gunicorn 21.
 
 ### Запуск проекта локально
 
-При необходимости установите Docker Desktop для вашей операционной системы (https://www.docker.com/products/docker-desktop/) и запустите его.
-
 Склонируйте репозиторий:
 
 ```git clone git@github.com:tanja-ovc/music-app.git```
@@ -63,6 +61,8 @@ DB_HOST=db
 DB_PORT=5432
 ```
 Примечание: web - контейнер с кодом, db - контейнер с БД.
+
+При необходимости установите Docker Desktop для вашей операционной системы (https://www.docker.com/products/docker-desktop/) и запустите его.
 
 Из директории с docker-compose выполните:
 
@@ -93,6 +93,8 @@ DB_PORT=5432
 Готовой коллекцией запросов к данному API можно воспользоваться, нажав сюда:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/17781130-5c353765-798e-4e08-b636-711c56434739?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D17781130-5c353765-798e-4e08-b636-711c56434739%26entityType%3Dcollection%26workspaceId%3D72dc4e92-3f43-4d26-98c0-5cef41aa79c2)
+
+Примечание: возможно, будет удобнее импортировать копию (Import a copy) коллекции к себе в Postman, чтобы без проблем отправлять запросы на  localhost.
 
 Документация API:
 
