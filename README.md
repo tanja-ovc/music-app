@@ -43,9 +43,11 @@ Python 3.10, Django 4.2, DRF 3.14, Docker Compose, PostgreSQL 13.0, Gunicorn 21.
 
 Склонируйте репозиторий:
 
-```git clone ```
+```git clone git@github.com:tanja-ovc/music-app.git```
 
-установите вирт окр?
+либо
+
+```git clone https://github.com/tanja-ovc/music-app.git```
 
 Добавьте файл с названием .env в music-app/qortexmusic (туда же, где .env.example) и заполните его:
 
