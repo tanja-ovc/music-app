@@ -36,8 +36,6 @@ class TrackSerializer(serializers.ModelSerializer):
                 albums_and_track_numbers, 'album',
                 'Нельзя добавить одну песню в альбом несколько раз.')
 
-        track_obj = Track.objects.create(**validated_data)
-
         for album_and_track_number in albums_and_track_numbers:
             track_name = validated_data.get('name')
             album = album_and_track_number.get('album')
@@ -45,6 +43,13 @@ class TrackSerializer(serializers.ModelSerializer):
 
             track_is_listed_on_album_validator(track_name, album)
             track_number_is_taken_validator(track_number, album)
+
+            if not Track.objects.filter(
+                    name=track_name, albums=album).exists():
+                track_obj = Track.objects.create(**validated_data)
+            else:
+                track_obj = Track.objects.filter(
+                    name=track_name, albums=album).first()
 
             TrackFromAlbum.objects.create(
                 album=album,
