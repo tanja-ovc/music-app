@@ -1,15 +1,20 @@
 # QortexMusic
-## Тестовое задание для "Кортекс": музыкальный каталог
-## Исполнители, альбомы, песни
+## Музыкальный каталог: исполнители, альбомы, песни
 
 В данном проекте содержится код API для музыкального каталога.
+
 Документация (доступна после запуска проекта):
+
 http://127.0.0.1/swagger/
+
 http://127.0.0.1/redoc/
 
 Проект упакован в контейнеры Docker для локального запуска.
+
 Добавлены .csv файлы вместе со специальной management-командой для заполнения БД.
+
 Добавлена ссылка на готовую коллекцию запросов в Postman для тестирования.
+
 
 ### Технологии
 
@@ -43,6 +48,7 @@ Python 3.10, Django 4.2, DRF 3.14, Docker Compose, PostgreSQL 13.0, Gunicorn 21.
 установите вирт окр?
 
 Добавьте файл с названием .env в music-app/qortexmusic (туда же, где .env.example) и заполните его:
+
 ```
 SECRET_KEY=Buddy-youre-a-boy-make-a-big-noise-Playin-in-the-street-gonna-be-a-big-man-some-day
 DEBUG=True
@@ -57,33 +63,45 @@ DB_PORT=5432
 Примечание: web - контейнер с кодом, db - контейнер с БД.
 
 Из директории с docker-compose выполните:
+
 ```docker-compose up -d```
 
 Для пересборки образа (в случае обновления содержимого проекта) дополните команду так:
+
 ```docker-compose up -d --build```
 
 Примените миграции:
+
 ```docker-compose exec web python manage.py migrate```
 
 Соберите статику:
+
 ```docker-compose exec web python manage.py collectstatic --no-input```
 
 При желании создайте суперюзера (например, чтобы посмотреть админку):
+
 ```docker-compose exec web python manage.py createsuperuser```
 
 ### Тестирование API
 
 Для удобства тестирования по желанию выполните команду загрузки тестовых данных в БД:
+
 ```docker-compose exec web python manage.py populate_db```
 
-Готовой коллекцией запросов к данному API можно воспользоваться, нажав сюда
+Готовой коллекцией запросов к данному API можно воспользоваться, нажав сюда:
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/17781130-5c353765-798e-4e08-b636-711c56434739?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D17781130-5c353765-798e-4e08-b636-711c56434739%26entityType%3Dcollection%26workspaceId%3D72dc4e92-3f43-4d26-98c0-5cef41aa79c2)
 
 Документация API:
+
 http://127.0.0.1/swagger/
+
 http://127.0.0.1/redoc/
 
 ### Автор проекта
+
 Татьяна Овчинникова
+
 https://github.com/tanja-ovc?tab=repositories
+
 tanja.ovc@yandex.ru
